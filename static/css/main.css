@@ -1,4 +1,80 @@
-h1 {
-    color: #fff;
-    background-color: #000;
+/****************************
+Index styles
+****************************/
+.mainContent {
+    /*background: url('../image/backgroundSquare.png');*/
+    background-color: #eee;
+    /*width: 80%;*/
+}
+
+.wrapper {
+    /*width: 968px;*/
+}
+
+.dynamicContent {
+    width: 80%;
+    margin: 0 auto 2em auto;
+}
+
+.view-subtitle {
+    font-weight: bold;
+}
+
+footer {
+    padding: 0.5em 1em 0 0;
+    color: #bbb;
+    border-top: 1px solid #aaa;
+    text-align: right;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+/****************************
+About Page Styles
+****************************/
+
+.aboutContent {
+    margin-top: 1em;
+}
+
+.mainSelfPhoto {
+    height: 300px;
+    width: 300px;
+    background-color: #333;
+    margin: 0 auto;
+}
+
+.photoSelector {
+    margin: 1em auto 0 auto;
+    width: 308px;
+}
+
+.selfPhotoItem {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    background-color: #444;
+}
+
+.selfPhoto1 {background: url(../image/self/self1.jpg) no-repeat center; background-size: contain;}
+.selfPhoto2 {background: url(../image/self/self2.jpg) no-repeat center; background-size: contain;}
+.selfPhoto3 {background: url(../image/self/self3.jpg) no-repeat center; background-size: contain;}
+
+/****************************
+Photo Page Styles
+****************************/
+
+#galleryContainer .item {
+    width: 25%;
+    margin-bottom: 1em;
+}
+
+#galleryContainer .item img {
+    width: 100%;
+}
+
+#galleryContainer .item.focus-pic {
+    width: 100%;
 }

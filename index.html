@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
     <head>
         <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="static/css/main.css" />
         <script type="text/javascript" src="static/js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="static/js/test.js"></script>
+        <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+        <script type="text/javascript" src="static/js/masonry.min.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
+        <script type="text/javascript" src="static/js/philiply.js"></script>
     </head>
-    <body>
-    <h1>Hello World</h1>
-    <p>philiply.com is currently under construction...</p>
+    <body class="mainContent">
+        <div class="wrapper">
+            <header>
+                <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">philiply</a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Portfolio <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#photo">Photography</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">3D stuff</li>
+                                <li><a href="#">Modeling</a></li>
+                                <li><a href="#">FX</a></li>
+                                <li><a href="#">Scripting</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Programming</li>
+                                <li><a href="#">Personal Projects</a>
+                          </ul>
+                        </li>
+                        <li>
+                            <a target="_newtab" href="https://www.dropbox.com/s/bz3cvoxwdl8vvz2/PhilipLy_Resume_7-9-14.pdf">
+                                Resume
+                            </a>
+                        </li>
+                        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </header>
+            <div class="dynamicContent" id="mainContent">
+                <!-- main angular injection done here -->
+                <div ng-view></div>
+            </div>
+
+            <footer>
+                &copy; Philip Ly 2014. All Rights Reserved.
+            </footer>
+        </div>
+        
     </body>
 </html>
