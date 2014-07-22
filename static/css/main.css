@@ -58,16 +58,21 @@ About Page Styles
     background-color: #444;
 }
 
-.selfPhoto1 {background: url(../image/self/self1.jpg) no-repeat center; background-size: contain;}
-.selfPhoto2 {background: url(../image/self/self2.jpg) no-repeat center; background-size: contain;}
-.selfPhoto3 {background: url(../image/self/self3.jpg) no-repeat center; background-size: contain;}
+.selfPhoto1 { background: url(../image/self/self1.jpg) no-repeat center; background-size: contain; }
+.selfPhoto2 { background: url(../image/self/self2.jpg) no-repeat center; background-size: contain; }
+.selfPhoto3 { background: url(../image/self/self3.jpg) no-repeat center; background-size: contain; }
 
 /****************************
 Photo Page Styles
 ****************************/
 
+#galleryContainer {
+    margin-bottom: 1em;
+}
+
 #galleryContainer .item {
-    width: 25%;
+    width: 22%;
+    min-height: 220px;
     margin-bottom: 1em;
 }
 
@@ -76,5 +81,21 @@ Photo Page Styles
 }
 
 #galleryContainer .item.focus-pic {
-    width: 100%;
+    width: 65%;
 }
+
+/****************************
+Photo Page Images
+****************************/
+#bee.item { background: url(../image/photography/small/bee.jpg) no-repeat center; background-size: contain; }
+#bigFlower.item { background: url(../image/photography/small/bigFlower.jpg) no-repeat center; background-size: contain; }
+#bubbles.item { background: url(../image/photography/small/bubbles.jpg) no-repeat center; background-size: contain; }
+#cuteSpider.item { background: url(../image/photography/small/cuteSpider.jpg) no-repeat center; background-size: contain; }
+#deadBee.item { background: url(../image/photography/small/deadBee.jpg) no-repeat center; background-size: contain; }
+#droplet.item { background: url(../image/photography/small/droplet.jpg) no-repeat center; background-size: contain; }
+#flowerBug.item { background: url(../image/photography/small/flowerBug.jpg) no-repeat center; background-size: contain; }
+#happyBeeFan.item { background: url(../image/photography/small/happyBeeFan.jpg) no-repeat center; background-size: contain; }
+#heavyArmsCustom.item { background: url(../image/photography/small/heavyArmsCustom.jpg) no-repeat center; background-size: contain; }
+#littleBuds.item { background: url(../image/photography/small/littleBuds.jpg) no-repeat center; background-size: contain; }
+#squirrelHug.item { background: url(../image/photography/small/squirrelHug.jpg) no-repeat center; background-size: contain; }
+#turtle.item { background: url(../image/photography/small/turtle.jpg) no-repeat center; background-size: contain; }
