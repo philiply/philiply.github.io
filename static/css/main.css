@@ -12,8 +12,8 @@ Index styles
 }
 
 .dynamicContent {
-    width: 80%;
-    margin: 0 auto 2em auto;
+    /*width: 80%;
+    margin: 0 auto 2em auto;*/
 }
 
 .view-subtitle {
@@ -21,10 +21,18 @@ Index styles
 }
 
 footer {
-    padding: 0.5em 1em 0 0;
     color: #bbb;
     border-top: 1px solid #aaa;
     text-align: right;
+    line-height: 25px;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+div.footer {
+    color: #777;
 }
 
 .dropdown-toggle {
@@ -35,6 +43,24 @@ footer {
     background-color: #aaa;
     color: #fff;
 }
+
+.dropdown-header:hover {
+    background-color: #fff;
+}
+
+/****************************
+Home Page
+****************************/
+.slideshow {
+    min-height: 350px;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.slideshow.slide0 { background: url('../image/slides/autoCity.jpg') no-repeat center; background-size: cover; }
+.slideshow.slide1 { background: url('../image/slides/autoCityReflection.jpg') no-repeat center; background-size: cover; }
+.slideshow.slide2 { background: url('../image/slides/droppedPokeballs.jpg') no-repeat center; background-size: cover; }
+.slideshow.slide3 { background: url('../image/slides/honeycombMacro4.jpg') no-repeat center; background-size: cover; }
 
 /****************************
 About Page Styles
