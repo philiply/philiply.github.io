@@ -1,3 +1,10 @@
+mainApp.controller("InitCtrl", function($scope) {
+     $scope.toggleMenu = function() {
+        console.log("toggle menu");
+        $('#navMenu').slideToggle();
+    };
+});
+
 mainApp.controller('homeController', function($scope) {
     $scope.slideCounter = 0;
     $scope.slideCount = 4;
@@ -27,8 +34,9 @@ mainApp.controller('homeController', function($scope) {
 });
 
 mainApp.controller('contactController', function($scope) {
+    
     $scope.updatePicture = function(target) {
-        $('#mainSelfPhoto').removeClass('selfPhoto1').removeClass('selfPhoto2').removeClass('selfPhoto3')
+        $('#mainSelfPhoto').removeClass('selfPhoto1 selfPhoto2 selfPhoto3')
         .addClass('selfPhoto'+$(target).data('photo'));
     };
 });

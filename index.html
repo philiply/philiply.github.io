@@ -19,7 +19,7 @@
         
         <script type="text/javascript" src="static/js/philiply.js"></script>
     </head>
-    <body class="mainContent">
+    <body class="mainContent" ng-controller="InitCtrl">
         <div class="wrapper">
             <header>
                 <nav class="navbar navbar-default">
@@ -27,8 +27,9 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="/">philiply</a>
                     </div>
+                    <div class="mobile-menu-dropdown" ng-click="toggleMenu()">menu</div>
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul id="navMenu" class="nav navbar-nav navbar-right">
                         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Portfolio <span class="caret"></span></a>

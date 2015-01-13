@@ -44,8 +44,41 @@ div.footer {
     color: #fff;
 }
 
-.dropdown-header:hover {
-    background-color: #fff;
+.navbar-nav > li:hover {
+    background-color: #efefef;
+}
+
+.dropdown-menu>li:hover {
+    background-color: #aaa;
+}
+
+.dropdown-menu>li.dropdown-header:hover {
+    background-color: #efefef;
+    color: #777;
+}
+
+.page-content {
+    padding: 1em;
+}
+
+.mobile-menu-dropdown {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 50px;
+    line-height: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-dropdown {
+        display: block;
+    }
+    
+    .nav.navbar-nav.navbar-right {
+        display: none;
+    }
 }
 
 /****************************
