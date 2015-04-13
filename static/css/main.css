@@ -14,10 +14,26 @@ Index styles
 .dynamicContent {
     /*width: 80%;
     margin: 0 auto 2em auto;*/
+    padding-top: 50px;
 }
 
 .view-subtitle {
     font-weight: bold;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+@media (max-width: 768px){
+    header {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 }
 
 footer {
@@ -42,6 +58,10 @@ div.footer {
 .navbar li:hover {
     background-color: #aaa;
     color: #fff;
+}
+
+.navbar-nab {
+    display: block;
 }
 
 .navbar-nav > li:hover {
@@ -78,22 +98,76 @@ div.footer {
     
     .nav.navbar-nav.navbar-right {
         display: none;
+        margin-top: 50px;
     }
 }
 
 /****************************
 Home Page
 ****************************/
+.slideshow-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.slideshow-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .slideshow {
-    min-height: 350px;
+    min-height: 630px;
     width: 100%;
     margin-top: -20px;
+    position: relative;
+    -webkit-transition: min-height 2s ease-in-out;
+    -moz-transition: min-height 2s ease-in-out;
+    transition: min-height 2s ease-in-out;
+}
+
+.slideshow.narrow {
+    min-height: 200px;
+}
+
+@media (max-width: 768px) {
+    .slideshow {
+        height: 100%;
+    }
 }
 
 .slideshow.slide0 { background: url('../image/slides/autoCity.jpg') no-repeat center; background-size: cover; }
 .slideshow.slide1 { background: url('../image/slides/autoCityReflection.jpg') no-repeat center; background-size: cover; }
 .slideshow.slide2 { background: url('../image/slides/droppedPokeballs.jpg') no-repeat center; background-size: cover; }
 .slideshow.slide3 { background: url('../image/slides/honeycombMacro4.jpg') no-repeat center; background-size: cover; }
+
+.name-container {
+    color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.name-container .name-overlay {
+    height: 100%;
+    background-color: rgba(0,0,0, 0.15);
+}
+
+.name-container .name-text {
+    font-size: 60px;
+    opacity: 1.0;
+    -webkit-transition: opacity 4s ease-in-out;
+    -moz-transition: opacity 4s ease-in-out;
+    transition: opacity 4s ease-in-out;
+}
+
+.name-text-container {
+    margin-left: 4em;
+    padding-top: 13em;
+    opacity: 0.0;
+}
 
 /****************************
 About Page Styles
@@ -122,9 +196,26 @@ About Page Styles
     background-color: #444;
 }
 
+.contact-links {
+    margin-top: 1em;
+}
+
+.contact-links ul li {
+    list-style-type: none;
+    float:left;
+    padding-right: 1em;
+}
+
 .selfPhoto1 { background: url(../image/self/self1.jpg) no-repeat center; background-size: contain; }
 .selfPhoto2 { background: url(../image/self/self2.jpg) no-repeat center; background-size: contain; }
 .selfPhoto3 { background: url(../image/self/self3.jpg) no-repeat center; background-size: contain; }
+
+.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }
 
 /****************************
 Photo Page Styles
@@ -179,4 +270,28 @@ Photo Page Styles
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+/****************************
+In Construction Page Styles
+****************************/
+.construction-container {
+    padding: 1em;
+    display: table;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.construction-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.construction-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: darkgray;
+    margin-left: 4em;
 }
