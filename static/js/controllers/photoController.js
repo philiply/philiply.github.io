@@ -1,5 +1,5 @@
 mainApp.controller('photoController', function($scope) {
-    $scope.pictureList = ['bee', 'bigFlower', 'bubbles', 'cuteSpider', 'campanile', 'deadBee', 'droplet', 'flowerBug', 'happyBeeFan', 'heavyArmsCustom', 'littleBuds', 'squirrelHug', 'turtle'];
+    $scope.pictureList = ['bee', 'bigFlower', 'bubbles', 'cuteSpider', 'campanile', 'deadBee', 'droplet', 'lionHead', 'flowerBug', 'happyBeeFan', 'heavyArmsCustom', 'littleBuds', 'cannonMacro', 'squirrelHug', 'turtle'];
     
     $scope.enlargePhoto = function(event, target) {
         event.stopPropagation();

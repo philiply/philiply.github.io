@@ -78,7 +78,7 @@ div.footer {
 }
 
 .page-content {
-    padding: 1em;
+    padding: 2em;
 }
 
 .mobile-menu-dropdown {
@@ -163,6 +163,10 @@ Home Page
     transition: opacity 4s ease-in-out;
 }
 
+.name-container .name-description-text {
+    margin-left: 5px;
+}
+
 .name-text-container {
     margin-left: 4em;
     padding-top: 13em;
@@ -173,8 +177,9 @@ Home Page
 About Page Styles
 ****************************/
 
-.aboutContent {
+.about-content {
     margin-top: 1em;
+    width: 100%;
 }
 
 .mainSelfPhoto {
@@ -223,6 +228,8 @@ Photo Page Styles
 
 #galleryContainer {
     margin-top: 1em;
+    margin-left: 0;
+    width: 100%;
 }
 
 #galleryContainer .galleryItem {
@@ -259,6 +266,7 @@ Photo Page Styles
 #globalOverlay #overlayContent > #overlayImage {
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 0px 25px 8px #777;
 }
 
 #globalOverlay #overlayContent #overlayImage > img {
@@ -270,6 +278,23 @@ Photo Page Styles
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+/****************************
+Project Styles
+****************************/
+.project-container {
+    margin-top: 2em;
+    width: 100%;
+}
+
+.project-container .project-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.project-img > img {
+    width: 100%;
 }
 
 /****************************

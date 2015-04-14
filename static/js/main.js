@@ -43,12 +43,12 @@ mainApp.config(function($routeProvider) {
             controller : 'inConstructionController'
         })
         .when('/other', {
-            /*
             templateUrl : 'views/other.html',
             controller : 'otherController'
-            */
+            /*
             templateUrl : 'views/inconstruction.html',
             controller : 'inConstructionController'
+            */
         })
         .otherwise({redirectTo: '/'});
 });
