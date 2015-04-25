@@ -6,17 +6,25 @@ mainApp.controller('photoController', function($scope) {
         var real_width, real_height;
         var $overlayImg = $('#globalOverlay #overlayImage > img');
         var $overlayImgDiv = $('#globalOverlay #overlayImage');
+        var $overlayLoadingGif = $('#globalOverlay .loading-gif');
+        $overlayImgDiv.hide();
+        $overlayLoadingGif.show();
+        $('#globalOverlay').fadeIn(300);
         $overlayImg.attr('src', 'static/image/photography/full/' +
                                                        $(target).parent().data('image') + '.jpg')
             .off("load").load(function() {
+            //Hide loading gif, fade in image
+            
+            console.log("image loaded");
             $overlayImgDiv.removeClass('vertical-photo');
             real_width = this.width;
             real_height = this.height;
             if (real_width < real_height) {
                 $overlayImgDiv.addClass('vertical-photo')
             }
-            $('#globalOverlay').fadeIn(300, function() {
-            });
+            $overlayLoadingGif.fadeOut();
+            $overlayImgDiv.fadeIn();
+            
         });
         
     };
