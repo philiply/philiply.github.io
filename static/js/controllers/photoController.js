@@ -22,8 +22,9 @@ mainApp.controller('photoController', function($scope) {
             if (real_width < real_height) {
                 $overlayImgDiv.addClass('vertical-photo')
             }
-            $overlayLoadingGif.fadeOut();
-            $overlayImgDiv.fadeIn();
+            $overlayLoadingGif.fadeOut("fast", function() {
+                $overlayImgDiv.fadeIn();
+            });
             
         });
         
