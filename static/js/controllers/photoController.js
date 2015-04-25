@@ -48,7 +48,7 @@ mainApp.directive('galleryLoaded', function() {
             });
             setTimeout(function() {
                 $('#galleryContainer').data('masonry').layout();
-            }, 150);
+            }, 500);
         }
         
     }
