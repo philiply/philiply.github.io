@@ -3,28 +3,21 @@ mainApp.controller('photoController', function($scope) {
     
     $scope.enlargePhoto = function(event, target) {
         event.stopPropagation();
+        var real_width, real_height;
         var $overlayImg = $('#globalOverlay #overlayImage > img');
         var $overlayImgDiv = $('#globalOverlay #overlayImage');
         $overlayImg.attr('src', 'static/image/photography/full/' +
-                                                       $(target).parent().data('image') + '.jpg');
-        $('#globalOverlay').fadeIn({start: function() {
-            $overlayImg.removeClass('verticalPhoto');
-            $overlayImg.height('auto');
-            
-            
-        }});
-        
-        $('#globalOverlay').fadeIn(300, function() {
-            if ($overlayImgDiv.width() < $overlayImgDiv.height()) { //vertical photo
-                console.log('vertical photo');
-                $overlayImg.addClass('verticalPhoto');
-                $overlayImg.height(window.innerHeight - 40);
+                                                       $(target).parent().data('image') + '.jpg')
+            .off("load").load(function() {
+            $overlayImgDiv.removeClass('vertical-photo');
+            real_width = this.width;
+            real_height = this.height;
+            if (real_width < real_height) {
+                $overlayImgDiv.addClass('vertical-photo')
             }
-            $('#overlayImage').css("marginTop", (window.innerHeight - $('#overlayImage > img').height())/2);
+            $('#globalOverlay').fadeIn(300, function() {
+            });
         });
-        //$(target).parent().data('image');
-        //$(target).parent().toggleClass('focus-pic');
-        //$('#galleryContainer').data('masonry').layout();
         
     };
     
@@ -42,6 +35,7 @@ mainApp.controller('photoController', function($scope) {
 mainApp.directive('galleryLoaded', function() {
     return function(scope, element, attrs) {
         if (scope.$last) {
+            console.log(scope.$last);
             $('#galleryContainer').masonry({
                 gutter: 10,
                 itemSelector: '.galleryItem',

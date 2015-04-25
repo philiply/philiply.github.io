@@ -252,32 +252,39 @@ Photo Page Styles
 }
 
 #globalOverlay > #overlayContainer {
-    position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.5);
+    display: table;
 }
 
 #globalOverlay #overlayContent {
-    width: 80%;
-    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #globalOverlay #overlayContent > #overlayImage {
-    margin-left: auto;
-    margin-right: auto;
+    width: 80%;
+    margin: 0 auto;
     box-shadow: 0px 0px 25px 8px #777;
+}
+
+@media (min-width: 1440px) {
+    #globalOverlay #overlayContent > #overlayImage {
+        width: 70%;
+    }
 }
 
 #globalOverlay #overlayContent #overlayImage > img {
     width: 100%;
 }
 
-#globalOverlay #overlayContent #overlayImage > img.verticalPhoto {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+#globalOverlay #overlayContent #overlayImage.vertical-photo {
+    width: 30%;
+}
+
+#globalOverlay .loading-gif {
+    display:none;
 }
 
 /****************************
