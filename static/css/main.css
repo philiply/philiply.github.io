@@ -269,18 +269,23 @@ Photo Page Styles
     box-shadow: 0px 0px 25px 8px #777;
 }
 
-@media (min-width: 1440px) {
-    #globalOverlay #overlayContent > #overlayImage {
-        width: 70%;
-    }
-}
 
 #globalOverlay #overlayContent #overlayImage > img {
     width: 100%;
 }
 
-#globalOverlay #overlayContent #overlayImage.vertical-photo {
-    width: 30%;
+#globalOverlay #overlayContent > #overlayImage.vertical-photo {
+    width: 40%;
+}
+
+@media (min-width: 1440px) {
+    #globalOverlay #overlayContent > #overlayImage {
+        width: 70%;
+    }
+    
+    #globalOverlay #overlayContent > #overlayImage.vertical-photo {
+        width: 35%;
+    }
 }
 
 #globalOverlay .loading-gif {

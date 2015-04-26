@@ -5,7 +5,7 @@
 
             <div ng-repeat="pic in pictureList" class="galleryItem" ng-click="enlargePhoto($event, $event.target)" data-image="{{pic}}" gallery-loaded>
                 <!--<div id="{{pic}}"></div>-->
-                <img src="../static/image/photography/small/{{pic}}.jpg">
+                <img data-image="{{pic}}" src="../static/image/photography/small/{{pic}}.jpg">
 
             </div>
 

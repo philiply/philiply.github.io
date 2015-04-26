@@ -1,6 +1,6 @@
 mainApp.controller('photoController', function($scope) {
     $scope.pictureList = ['bee', 'bigFlower', 'bubbles', 'cuteSpider', 'campanile', 'deadBee', 'droplet', 'lionHead', 'flowerBug', 'happyBeeFan', 'heavyArmsCustom', 'littleBuds', 'cannonMacro', 'squirrelHug', 'turtle'];
-    
+    $scope.selectedPic = "";
     $scope.enlargePhoto = function(event, target) {
         event.stopPropagation();
         var real_width, real_height;
@@ -9,26 +9,32 @@ mainApp.controller('photoController', function($scope) {
         var $overlayLoadingGif = $('#globalOverlay .loading-gif');
         $overlayImgDiv.hide();
         $overlayLoadingGif.show();
+
+        if ($(target).data("image") == $scope.selectedPic) {
+            revealPhoto($overlayImg.width(), $overlayImg.height());
+        }
+        
         $('#globalOverlay').fadeIn(300);
         $overlayImg.attr('src', 'static/image/photography/full/' +
                                                        $(target).parent().data('image') + '.jpg')
-            .off("load").load(function() {
-            //Hide loading gif, fade in image
-            
-            console.log("image loaded");
-            $overlayImgDiv.removeClass('vertical-photo');
-            real_width = this.width;
-            real_height = this.height;
-            if (real_width < real_height) {
-                $overlayImgDiv.addClass('vertical-photo')
-            }
-            $overlayLoadingGif.fadeOut("fast", function() {
-                $overlayImgDiv.fadeIn();
-            });
-            
+        .off("load").load(function() {
+            revealPhoto(this.width, this.height);
+            $scope.selectedPic = $(target).data("image");
         });
         
     };
+    
+    function revealPhoto(realWidth, realHeight) {
+        var $overlayImgDiv = $('#globalOverlay #overlayImage');
+        var $overlayLoadingGif = $('#globalOverlay .loading-gif');
+        $overlayImgDiv.removeClass('vertical-photo');
+        if (realWidth < realHeight) {
+            $overlayImgDiv.addClass('vertical-photo')
+        }
+        $overlayLoadingGif.fadeOut("fast", function() {
+            $overlayImgDiv.fadeIn();
+        });
+    }
     
     $('#globalOverlay #overlayContainer').click(function() {
         $('#globalOverlay').fadeOut();
