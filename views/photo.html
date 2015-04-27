@@ -1,11 +1,11 @@
 <div>
     <div class="page-content">
         <div class="view-subtitle">I take pictures.</div>
-        <div id="galleryContainer" class="row" gallery-done>
+        <div id="galleryContainer" class="row">
 
             <div ng-repeat="pic in pictureList" class="galleryItem" ng-click="enlargePhoto($event, $event.target)" data-image="{{pic}}" gallery-loaded>
                 <!--<div id="{{pic}}"></div>-->
-                <img data-image="{{pic}}" src="../static/image/photography/small/{{pic}}.jpg">
+                <img data-image="{{pic}}" src="../static/image/photography/small/{{pic}}.jpg" image-loaded>
 
             </div>
 

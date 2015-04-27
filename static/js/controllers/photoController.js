@@ -48,16 +48,6 @@ mainApp.controller('photoController', function($scope) {
     
 });
 
-mainApp.directive('galleryDone', function() {
-    return function(scope, element, attrs) {
-        $(window).load(function() {
-            setTimeout(function(){
-                $('#galleryContainer').data('masonry').layout();
-            }, 500);
-        });
-    }
-});
-
 mainApp.directive('galleryLoaded', function() {
     return function(scope, element, attrs) {
         if (scope.$last) {
@@ -66,5 +56,21 @@ mainApp.directive('galleryLoaded', function() {
                 itemSelector: '.galleryItem',
             });
         }
+    }
+});
+
+var photoLoadCount = 0;
+
+mainApp.directive('imageLoaded', function() {
+    return function(scope, element, attrs) {
+        $(element).load(function() {
+            photoLoadCount += 1;
+            
+            if (photoLoadCount === scope.pictureList.length) {
+                $('#galleryContainer').data('masonry').layout();
+                photoLoadCount = 0;
+                console.log("all images loaded");
+            }
+        });
     }
 });
