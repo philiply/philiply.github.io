@@ -47,17 +47,23 @@ mainApp.controller('photoController', function($scope) {
     });
 });
 
-mainApp.directive('galleryLoaded', function() {
+mainApp.directive('galleryDone', function() {
     return function(scope, element, attrs) {
-        if (scope.$last) {
-            console.log(scope.$last);
+        $(window).load(function() {
             $('#galleryContainer').masonry({
                 gutter: 10,
                 itemSelector: '.galleryItem',
             });
-            setTimeout(function() {
-                $('#galleryContainer').data('masonry').layout();
-            }, 500);
+            $('#galleryContainer').data('masonry').layout();
+            
+        });
+    }
+});
+
+mainApp.directive('galleryLoaded', function() {
+    return function(scope, element, attrs) {
+        if (scope.$last) {
+            
         }
         
     }
