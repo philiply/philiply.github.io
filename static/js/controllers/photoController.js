@@ -45,16 +45,15 @@ mainApp.controller('photoController', function($scope) {
             $('#globalOverlay').fadeOut();
         }
     });
+    
 });
 
 mainApp.directive('galleryDone', function() {
     return function(scope, element, attrs) {
         $(window).load(function() {
-           
-            setTimeout(function() {
+            setTimeout(function(){
                 $('#galleryContainer').data('masonry').layout();
-            }, 250);
-            
+            }, 500);
         });
     }
 });
