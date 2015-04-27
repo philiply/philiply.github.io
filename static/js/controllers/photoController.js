@@ -54,7 +54,9 @@ mainApp.directive('galleryDone', function() {
                 gutter: 10,
                 itemSelector: '.galleryItem',
             });
-            $('#galleryContainer').data('masonry').layout();
+            setTimeout(function() {
+                $('#galleryContainer').data('masonry').layout();
+            }, 250);
             
         });
     }
@@ -64,6 +66,9 @@ mainApp.directive('galleryLoaded', function() {
     return function(scope, element, attrs) {
         if (scope.$last) {
             
+            /*setTimeout(function() {
+                $('#galleryContainer').data('masonry').layout();
+            }, 500);*/
         }
         
     }

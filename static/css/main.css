@@ -27,7 +27,7 @@ header {
     z-index: 2;
 }
 
-@media (max-width: 768px){
+@media (max-width: 600px){
     header {
         z-index: 100;
         position: fixed;
@@ -91,7 +91,7 @@ div.footer {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .mobile-menu-dropdown {
         display: block;
     }
@@ -132,7 +132,7 @@ Home Page
     min-height: 200px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .slideshow {
         height: 100%;
     }
