@@ -50,10 +50,7 @@ mainApp.controller('photoController', function($scope) {
 mainApp.directive('galleryDone', function() {
     return function(scope, element, attrs) {
         $(window).load(function() {
-            $('#galleryContainer').masonry({
-                gutter: 10,
-                itemSelector: '.galleryItem',
-            });
+           
             setTimeout(function() {
                 $('#galleryContainer').data('masonry').layout();
             }, 250);
@@ -65,11 +62,10 @@ mainApp.directive('galleryDone', function() {
 mainApp.directive('galleryLoaded', function() {
     return function(scope, element, attrs) {
         if (scope.$last) {
-            
-            /*setTimeout(function() {
-                $('#galleryContainer').data('masonry').layout();
-            }, 500);*/
+            $('#galleryContainer').masonry({
+                gutter: 10,
+                itemSelector: '.galleryItem',
+            });
         }
-        
     }
 });
