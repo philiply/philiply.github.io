@@ -1,7 +1,54 @@
 <div>
     <div class="construction-container">
         <div class="construction-tablecell">
-            <div class="construction-text">in construction...</div>
+            <div class="construction-text" ng-init="initAnimation()">
+                in construction
+                
+                <svg width="100" height="40">
+                    <rect id="ellipsis0" x=5 y=35 width="4" height="4" class="construction-ellipsis" />
+                    <rect id="ellipsis1" x=15 y=35 width="4" height="4" class="construction-ellipsis" />
+                    <rect id="ellipsis2" x=25 y=35 width="4" height="4" class="construction-ellipsis" />
+                    
+                    <animate 
+                            xlink:href="#ellipsis0"
+                            attributeName="y"
+                            from="35"
+                            to="30" 
+                            dur="4s"
+                            begin="0s"
+                            values="35; 30; 35; 35"
+                            keyTimes="0; 0.25; 0.5; 1"
+                            repeatCount="indefinite"
+                            fill="freeze" 
+                            id="ellipsis0-anim-up" />
+
+                    <animate 
+                            xlink:href="#ellipsis1"
+                            attributeName="y" 
+                            from="35"
+                            to="30" 
+                            dur="4s"
+                            begin="ellipsis0-anim-up.begin + 1s"
+                            values="35; 30; 35; 35"
+                            keyTimes="0; 0.25; 0.5; 1"
+                            repeatCount="indefinite"
+                            fill="freeze" 
+                            id="ellipsis1-anim-up" />  
+                    <animate 
+                            xlink:href="#ellipsis2"
+                            attributeName="y" 
+                            from="35"
+                            to="30" 
+                            dur="4s"
+                            begin="ellipsis1-anim-up.begin + 1s"
+                            values="35; 30; 35; 35"
+                            keyTimes="0; 0.25; 0.5; 1"
+                            repeatCount="indefinite"
+                            fill="freeze" 
+                            id="ellipsis2-anim-up" />
+                    
+                </svg>
+            </div>
         </div>
     </div>
 </div>

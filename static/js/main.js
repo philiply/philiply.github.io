@@ -18,13 +18,18 @@ mainApp.config(function($routeProvider) {
             templateUrl : 'views/modeling.html',
             controller : 'modelingController'
         })*/
-        .when('/personalProjects', {
-            /*   
-            templateUrl : 'views/personalProj.html',
+        .when('/projects', {
+               
+            templateUrl : 'views/projects.html',
             controller : 'personalProjController'
-            */
+            /*
             templateUrl : 'views/inconstruction.html',
             controller : 'inConstructionController'
+            */
+        })
+        .when('/3dprojects', {
+            templateUrl: 'views/inconstruction.html',
+            controller: 'inConstructionController'
         })
         .when('/fx', {
             /*

@@ -121,7 +121,6 @@ Home Page
 .slideshow {
     min-height: 630px;
     width: 100%;
-    margin-top: -20px;
     position: relative;
     -webkit-transition: min-height 2s ease-in-out;
     -moz-transition: min-height 2s ease-in-out;
@@ -331,4 +330,12 @@ In Construction Page Styles
     font-weight: bold;
     color: darkgray;
     margin-left: 4em;
+}
+
+.construction-text div {
+    display: inline-block;
+}
+
+.construction-ellipsis {
+        fill: darkgray;
 }

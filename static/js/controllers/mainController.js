@@ -17,8 +17,9 @@ mainApp.controller('homeController', function($scope) {
     
     $scope.init = function() {
          setTimeout(function() {
-            $('.slideshow').removeClass('narrow');
-            $('.name-text-container').animate({opacity: 1.0}, 4000);
+             //$('.slideshow').removeClass('narrow');
+             $('.slideshow').velocity({minHeight: 630}, 0, "swing");
+             $('.name-text-container').animate({opacity: 1.0}, 4000);
         }, 250);
     };
     
@@ -47,5 +48,7 @@ mainApp.controller('contactController', function($scope) {
 });
 
 mainApp.controller('inConstructionController', function($scope) {
-    
+    $scope.initAnimation = function() {
+        
+    };
 });
