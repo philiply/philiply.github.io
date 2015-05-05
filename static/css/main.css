@@ -229,15 +229,19 @@ Photo Page Styles
     margin-top: 1em;
     margin-left: 0;
     width: 100%;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
 }
 
-#galleryContainer .galleryItem {
+#galleryContainer .gallery-item {
     width: 24%;
     margin-bottom: 1em;
     cursor: pointer;
 }
 
-#galleryContainer .galleryItem img {
+#galleryContainer .gallery-item img {
     width: 100%;
 }
 

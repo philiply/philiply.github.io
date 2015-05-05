@@ -14,52 +14,30 @@ mainApp.config(function($routeProvider) {
             templateUrl : 'views/photo.html',
             controller: 'photoController' 
         })
-        /*.when('/modeling', {
-            templateUrl : 'views/modeling.html',
-            controller : 'modelingController'
-        })*/
-        .when('/projects', {
-               
+        .when('/projects', {     
             templateUrl : 'views/projects.html',
             controller : 'personalProjController'
-            /*
-            templateUrl : 'views/inconstruction.html',
-            controller : 'inConstructionController'
-            */
         })
         .when('/3dprojects', {
             templateUrl: 'views/inconstruction.html',
             controller: 'inConstructionController'
-        })
-        .when('/fx', {
             /*
-            templateUrl : 'views/fx.html',
-            controller : 'fxController'
+            templateUrl: 'views/3dProjects.html',
+            controller: '3dProjectController'
             */
-            templateUrl : 'views/inconstruction.html',
-            controller : 'inConstructionController'
-        })
-        .when('/scripting', {
-            /*
-            templateUrl : 'views/scripting.html',
-            controller : 'scriptingController'
-            */
-            templateUrl : 'views/inconstruction.html',
-            controller : 'inConstructionController'
         })
         .when('/other', {
             templateUrl : 'views/other.html',
             controller : 'otherController'
-            /*
-            templateUrl : 'views/inconstruction.html',
-            controller : 'inConstructionController'
-            */
+        })
+        .when('/blog', {
+            templateUrl: 'views/inconstruction.html',
+            controller: 'inConstructionController'
         })
         .otherwise({redirectTo: '/'});
 });
 
 $(document).ready(function() {
-    
     window.onresize = function() {
         if (window.innerWidth > 768) {
             $('.navbar-nav').fadeIn();

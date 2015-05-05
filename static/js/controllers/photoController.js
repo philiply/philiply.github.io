@@ -1,5 +1,5 @@
 mainApp.controller('photoController', function($scope) {
-    $scope.pictureList = ['bee', 'bigFlower', 'bubbles', 'cuteSpider', 'campanile', 'deadBee', 'droplet', 'lionHead', 'flowerBug', 'happyBeeFan', 'heavyArmsCustom', 'littleBuds', 'cannonMacro', 'squirrelHug', 'turtle'];
+    $scope.pictureList = ['bee', 'geeselings', 'bigFlower', 'bubbles', 'cuteSpider', 'campanile', 'deadBee', 'droplet', 'lionHead', 'flowerBug', 'happyBeeFan', 'heavyArmsCustom', 'snowOnLeaves', 'littleBuds', 'cannonMacro', 'squirrelHug', 'turtle'];
     $scope.selectedPic = "";
     $scope.enlargePhoto = function(event, target) {
         event.stopPropagation();
@@ -22,6 +22,14 @@ mainApp.controller('photoController', function($scope) {
             $scope.selectedPic = $(target).data("image");
         });
         
+    };
+    
+    $scope.popout = function(target) {
+        $(target).velocity({translateZ: 20}, {easing: "spring"});
+    };
+    
+    $scope.popback = function(target) {
+        $(target).velocity({translateZ: 0}, {easing: "spring"});
     };
     
     function revealPhoto(realWidth, realHeight) {
@@ -53,7 +61,7 @@ mainApp.directive('galleryLoaded', function() {
         if (scope.$last) {
             $('#galleryContainer').masonry({
                 gutter: 10,
-                itemSelector: '.galleryItem',
+                itemSelector: '.gallery-item',
             });
         }
     }
@@ -69,7 +77,6 @@ mainApp.directive('imageLoaded', function() {
             if (photoLoadCount === scope.pictureList.length) {
                 $('#galleryContainer').data('masonry').layout();
                 photoLoadCount = 0;
-                console.log("all images loaded");
             }
         });
     }
