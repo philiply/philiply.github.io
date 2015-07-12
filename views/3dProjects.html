@@ -5,16 +5,12 @@
             <div class="view-subtitle">Projects</div>
         </div>
         
-        <div>
-            <div class="row project-container">
-                <div class="project-img col-xs-3 col-md-3 col-lg-2">
-                    <img src="/static/image/projectPreview/Android_Robot_200.png">
+        <div id="threeDProjectGallery">
+            <div class="project3d-item" ng-repeat="p in projectData" ng-click="goToProject(p.id)">
+                <div id="{{p.id}}" class="project3d-img">
+                    <img src="../static/image/renders/{{p.imgName}}" ng-mouseenter="revealText($event)" ng-mouseleave="hideText($event)"/>
                 </div>
-                <div class="project-text col-xs-9 col-md-9 col-lg-10">
-                    <div class="project-title">Tip Calculator (Android, Java)</div>
-                    <div class="project-description">Took the time to learn the basics of Android development. A simple tip calculator that takes in the user's number input and can generate how much tip must be paid. The user can also use an inline picker to determine the even split per person.</div>
-                    <div class="project-link"><a target="_newtab" href="https://github.com/philiply/TipCalculatorApp">Github</a></div>
-                </div>
+                <div class="project3d-text">{{p.name}}</div>
             </div>
             
         </div>

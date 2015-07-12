@@ -1,3 +1,5 @@
+"use strict";
+
 var mainApp = angular.module('mainApp', ['ngRoute']);
 
 mainApp.config(function($routeProvider) {
@@ -19,12 +21,12 @@ mainApp.config(function($routeProvider) {
             controller : 'personalProjController'
         })
         .when('/3dprojects', {
-            templateUrl: 'views/inconstruction.html',
-            controller: 'inConstructionController'
-            /*
             templateUrl: 'views/3dProjects.html',
             controller: '3dProjectController'
-            */
+        })
+        .when('/3dprojects/:projectName', {
+            templateUrl: 'views/3dProjectsDetails.html',
+            controller: '3dProjectDetailsController'
         })
         .when('/other', {
             templateUrl : 'views/other.html',
