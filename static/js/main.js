@@ -1,5 +1,6 @@
 "use strict";
 
+var slideshowLoopID = 0;
 var mainApp = angular.module('mainApp', ['ngRoute']);
 
 mainApp.config(function($routeProvider) {
@@ -14,9 +15,9 @@ mainApp.config(function($routeProvider) {
         })
         .when('/photo', {
             templateUrl : 'views/photo.html',
-            controller: 'photoController' 
+            controller: 'photoController'
         })
-        .when('/projects', {     
+        .when('/projects', {
             templateUrl : 'views/projects.html',
             controller : 'personalProjController'
         })
@@ -40,13 +41,15 @@ mainApp.config(function($routeProvider) {
 });
 
 $(document).ready(function() {
+    /*
     window.onresize = function() {
         if (window.innerWidth > 768) {
             $('.navbar-nav').fadeIn();
         } else {
-            $('.navbar-nav').hide();
+            //$('.navbar-nav').hide();
         }
     }
+    */
 });
 
 //Twitter badge function

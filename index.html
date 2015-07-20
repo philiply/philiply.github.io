@@ -25,16 +25,19 @@
     <body class="mainContent" ng-controller="InitCtrl">
         <div class="wrapper">
             <header>
-                <nav class="navbar navbar-default">
+                <div id="menuIconContainer" class="menu-icon" ng-click="revealMenu()" ng-init="getMenuIcon()">
+                    <!--<img class="menu-icon" src="static/image/menu.svg" alt="" />-->
+                </div>
+                <nav class="navbar navbar-default" ng-mouseleave="hideMenu()">
                 <div class="container">
                     <!--
                     <div class="navbar-header">
                         <a class="navbar-brand" href="/">philiply</a>
                     </div>
-                    -->
-                    <div class="mobile-menu-dropdown" ng-click="toggleMenu()">menu</div>
 
-                    <ul id="navMenu" class="nav navbar-nav navbar-right">
+                    <div class="mobile-menu-dropdown" ng-click="toggleMenu()">menu</div>
+                    -->
+                    <ul id="navMenu" class="nav navbar-nav navbar-left">
                         <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Portfolio <span class="caret"></span></a>

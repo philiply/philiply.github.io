@@ -1,22 +1,23 @@
 <div ng-init="init()">
-    
+
     <div class="slideshow-table">
         <div class="slideshow-tablecell">
-            <div class="slideshow narrow slide1" ng-init="slideshowLoop()">
+            <div class="slideshow narrow" ng-init="slideshowLoop()">
+                <div ng-repeat="num in slides" class="slide slide{{num}}"></div>
                 <div class="name-container">
                     <div class="name-overlay">
                         <div class="name-text-container">
                             <div class="name-text">Philip Ly</div>
                             <div class="name-description-text">programmer</div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+
+
     <!--
     <div class="page-content">
         <h1>Welcome!</h1>

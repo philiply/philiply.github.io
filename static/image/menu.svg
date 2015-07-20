@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   viewBox="0 0 300.67508 239.74315"
+   height="35px"
+   width="35px">
+  <g
+     transform="translate(-100.66756,-269.20009)"
+     id="layer1">
+    <rect
+       transform="scale(1,-1)"
+       y="-463.66498"
+       x="145.94583"
+       height="42.417248"
+       width="208.91927"
+       id="rect3346-7-0-3"
+       class="menu-icon-svg"/>
+    <rect
+       transform="scale(1,-1)"
+       y="-410.0816"
+       x="146.5508"
+       height="42.417248"
+       width="208.91927"
+       id="rect3346-7-0-3-4"
+       class="menu-icon-svg" />
+    <rect
+       transform="scale(1,-1)"
+       y="-356.89563"
+       x="147.14508"
+       height="42.417248"
+       width="208.91927"
+       id="rect3346-7-0-3-4-5"
+       class="menu-icon-svg"/>
+  </g>
+</svg>
