@@ -9,17 +9,17 @@
             //var keyboard = new THREEx.KeyboardState();
             var WIDTH = 500,
                 HEIGHT = 500;
-            
+
             var VIEW_ANGLE = 45,
                 ASPECT = WIDTH/HEIGHT,
                 NEAR = 0.1,
                 FAR = 10000;
 
-            var renderer = new THREE.WebGLRenderer();
+            var renderer = new THREE.WebGLRenderer({antialias:true});
             var camera = new THREE.PerspectiveCamera(VIEW_ANGLE,ASPECT,NEAR,FAR);
 
             var scene = new THREE.Scene();
-            
+
             var controls = new THREE.OrbitControls(camera, renderer.domElement);
             controls.damping = 0.5;
             //controls.addEventLifstener('change', render);
@@ -29,18 +29,18 @@
             camera.position.z = 300;
 
             renderer.setSize(WIDTH, HEIGHT);
-            
+
             var sphereMaterial = new THREE.MeshPhongMaterial({
                 color: 0xCC0000
             });
-            
+
             var mirrorSphere, mirrorSphereCamera;
-            
+
             mirrorSphereCamera = new THREE.CubeCamera(0.1, 5000, 512);
             scene.add(mirrorSphereCamera);
-            
+
             var mirrorSphereMaterial = new THREE.MeshBasicMaterial({envMap: mirrorSphereCamera.renderTarget});
-            
+
             function addSphere() {
                 var radius = 25,
                     segments = 16,
@@ -51,67 +51,67 @@
                 sphere.position.set(0, 0, 0);
                 scene.add(sphere);
             }
-            
+
             function addNewSphere(x, y, z){
                 var radius = 20,
                     segments = 16,
                     rings = 16;
                 var newSphere = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), sphereMaterial);
-                
+
                 newSphere.position.x = x;
                 newSphere.position.y = y;
                 newSphere.position.z = z;
-                
+
                 scene.add(newSphere);
             }
-            
+
             function addNewMirrorSphere(x, y, z) {
                 var radius = 20,
                     segments = 16,
                     rings = 16;
                 var newSphere = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), mirrorSphereMaterial);
-                
+
                 newSphere.position.x = x;
                 newSphere.position.y = y;
                 newSphere.position.z = z;
-                
+
                 scene.add(newSphere);
             }
-            
+
             function addGround() {
-                var ground = new THREE.Mesh(new THREE.PlaneBufferGeometry(10000, 10000, 10, 10), 
+                var ground = new THREE.Mesh(new THREE.PlaneBufferGeometry(10000, 10000, 10, 10),
                                          new THREE.MeshPhongMaterial({color: 0xfffdee, side: THREE.DoubleSide}));
                 ground.position.set(0, -1000, 0);
                 ground.rotation.set(90, 0, 0);
                 scene.add(ground);
-                
+
             }
-            
+
             function addPLight() {
                 var pointLight = new THREE.PointLight(0xFFFFFF);
-                
+
                 pointLight.position.x = 10;
                 pointLight.position.y = 50;
                 pointLight.position.z = 130;
-                
+
                 scene.add(pointLight);
             }
-            
+
             function render() {
                 requestAnimationFrame(render);
                 mirrorSphereCamera.updateCubeMap(renderer, scene);
                 //controls.update();
                 renderer.render(scene, camera);
             }
-            
+
             function createSphere() {
                 var xpos = parseInt($('#newSphereX').val());
                 var ypos = parseInt($('#newSphereY').val())
                 var zpos = parseInt($('#newSphereZ').val())
-                
+
                 addNewSphere(xpos, ypos, zpos);
             }
-            
+
             function clearGeo() {
                 for (var idx = scene.children.length-1  ; idx >= 0; idx--) {
                     if (scene.children[idx].type == "Mesh") {
@@ -120,22 +120,22 @@
                     }
                 }
             }
-            
+
             function makeHelix(sphereCount) {
                 var radius = 50;
                 var angle = 0;
                 var z = -sphereCount/2;
-                
+
                 for (var i=0; i < sphereCount; i++) {
                     var xPos = radius*Math.cos(angle);
                     var yPos = radius*Math.sin(angle);
                     addNewSphere(xPos, yPos, z*10-50);
-                    
+
                     angle += 10;
                     z+=1;
                 }
             }
-            
+
             addSphere();
             addPLight();
             addGround();
@@ -166,7 +166,7 @@
                 <input type="button" id="submitNewSphere" value="New Sphere!" onclick="createSphere()" />
             </div>
         </div>
-        
+
         <div>
             <input type="button" value="Clear Geometry" onclick="clearGeo()"/>
         </div>
