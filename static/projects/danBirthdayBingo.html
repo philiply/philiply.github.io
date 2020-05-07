@@ -9,10 +9,15 @@
       }
       .bingo-cell {
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         border: 1px solid black;
         cursor: pointer;
+        -webkit-user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
       }
 
       .bingo-cell > .crossed {
@@ -20,7 +25,7 @@
         top: 0;
         width: 100%;
         color: red;
-        font-size: 50px;
+        font-size: 100px;
       }
 
       header {
@@ -30,6 +35,7 @@
         background-size: cover;
         background-image: url('../image/DSC_1696.JPG');
         margin-bottom: 1em;
+        background-position-y: -85px;
       }
 
       header > h1 {
@@ -43,8 +49,7 @@
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-    </script>
+    <script src="../js/bingoList.js"></script>
   </head>
   <body>
     <header>
@@ -65,20 +70,33 @@
 
     <div class="instructions">
       <h3>Instructions:</h3>
-      <ul>
-        <li></li>
+      <ul style="width:50%; margin: 0 auto;">
+        <li>Try to get Dan do the things on your board</li>
+        <li>Try not to reload the page or else your board gets mixed up again</li>
+        <li>If you get a bingo, take a screenshot and send it to us.</li>
       </ul>
     </div>
    
     <script>
+      function getBingoItems() {
+        var items = [];
+        if (window.bingoList) {
+          for (var i = 0; i < 24; i++) {
+
+          }
+        }
+        return items;
+      }
+
       var listOfDanActions = [];
         for (var i = 0; i < 5; i++) {
           var danActionsRow = [];
           for (var j = 0; j < 5; j++) {
             if (i == 2 && j == 2) {
-              danActionsRow.push('free space');
+              danActionsRow.push('Free space');
             } else {
-              danActionsRow.push(j);
+              var randomIndex = Math.floor(Math.random() * bingoList.length);
+              danActionsRow.push(window.bingoList.splice(randomIndex, 1)[0]);
             }
           }
           listOfDanActions.push(danActionsRow);
